@@ -1,0 +1,55 @@
+Deskripsi proyek
+Kamu adalah seorang analis di Crankshaft List. Ratusan iklan kendaraan gratis ditayangkan di situs web perusahaan setiap harinya. Nah, kamu ditugaskan untuk mempelajari data yang telah dikumpulkan selama beberapa tahun terakhir guna menentukan faktor-faktor yang memengaruhi harga sebuah kendaraan.
+
+Instruksi untuk menyelesaikan proyek
+Langkah 1. Buka file data dan pelajari informasi umumnya
+File path: /datasets/vehicles_us.csv. Unduh dataset
+
+
+Langkah 2. Pra-pemrosesan data
+Periksa dan pelajari nilai-nilai yang hilang:
+
+Dalam beberapa kasus, terdapat cara yang eksplisit untuk mengganti nilai-nilai yang hilang. Misalnya, jika sebuah kolom Boolean hanya memuat nilai-nilai True, maka masuk akal untuk mengasumsikan bahwa nilai-nilai yang hilang adalah nilai False. Akan tetapi, cara ini tidak dapat digunakan untuk memperbaiki tipe data lainnya. Terkadang, kamu pun bisa menghadapi kasus di mana jumlah nilai yang hilang cukup signifikan. Dalam kasus seperti itu, kamu tidak bisa serta-merta mengisi nilai-nilai yang hilang tersebut.
+Jika memang memungkinkan, isilah nilai yang hilang dengan nilai pengganti. Jelaskan mengapa kamu melakukannya dan bagaimana kamu memilih nilai penggantinya.
+Jelaskan faktor-faktor yang mungkin menyebabkan hilangnya nilai.
+Ubah tipe data menjadi tipe yang dibutuhkan:
+Tunjukkan kolom mana yang tipe datanya perlu diubah dan jelaskan alasannya.
+
+Langkah 3. Hitung dan tambahkan hal berikut ini ke tabel:
+Hari dalam minggu, bulan, dan tahun iklan ditayangkan
+Usia kendaraan (dalam tahun) ketika iklan ditayangkan
+Jarak tempuh rata-rata kendaraan per tahun
+Pada kolom condition, ganti nilai string dengan skala numerik:
+
+new = 5
+like new = 4
+excellent = 3
+good = 2
+fair = 1
+salvage = 0 
+
+Langkah 4. Lakukan analisis data eksploratif dengan mengikuti petunjuk di bawah ini:
+Pelajari parameter berikut: harga, usia kendaraan saat iklan ditayangkan, jarak tempuh, jumlah silinder, dan kondisi. Buatlah histogram untuk setiap parameter tersebut. Pelajari bagaimana outlier memengaruhi bentuk dan keterbacaan histogram yang kamu buat.
+Tentukan batas atas outlier, hapus outlier, dan simpan outlier tersebut ke dalam DataFrame yang terpisah, lalu lanjutkan pekerjaanmu dengan data yang telah difilter.
+Gunakan data yang telah difilter untuk membuat histogram baru. Bandingkan dengan histogram sebelumnya (histogram yang berisi outlier). Tarik kesimpulan untuk setiap histogram.
+Pelajari berapa hari iklan ditayangkan (days_listed). Buatlah sebuah histogram. Hitung rata-rata dan mediannya. Jelaskan berapa lama umumnya sebuah iklan ditayangkan. Tentukan kapan iklan dihapus dengan cepat, dan kapan iklan ditayangkan dalam waktu yang sangat lama.
+Lakukan analisis terhadap jumlah iklan dan harga rata-rata setiap jenis kendaraan. Buat sebuah grafik yang menunjukkan ketergantungan jumlah iklan pada jenis kendaraan. Pilih dua jenis kendaraan dengan jumlah iklan yang paling banyak.
+Faktor apa saja yang paling memengaruhi harga kendaraan? Ambil masing-masing jenis kendaraan populer yang kamu temukan pada tahap sebelumnya dan pelajari apakah harganya bergantung pada usia, jarak tempuh, kondisi, tipe transmisi, dan warnanya. Buat grafik boxplot untuk variabel kategorik (jenis transmisi dan warna), lalu buat scatterplot untuk sisanya. Ketika menganalisis variabel kategorik, ingat bahwa kategori harus memiliki setidaknya 50 iklan. Jika tidak, parameternya tidak akan valid untuk digunakan saat analisis.
+Langkah 5. Tulis kesimpulannya secara menyeluruh
+
+
+Deskripsi data
+Dataset yang kamu miliki berisi kolom-kolom berikut:
+
+price
+model_year
+model
+condition
+cylinders
+fuel — gas, disel, dan lain-lain.
+odometer — jarak tempuh kendaraan saat iklan ditayangkan
+transmission
+paint_color
+is_4wd — apakah kendaraan memiliki penggerak 4 roda (tipe Boolean)
+date_posted — tanggal iklan ditayangkan
+days_listed — jumlah hari iklan ditayangkan hingga dihapus
